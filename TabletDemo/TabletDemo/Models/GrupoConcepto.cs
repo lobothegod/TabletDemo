@@ -17,6 +17,6 @@ namespace TabletDemo.Models
 
         public string Id { get; set; }
 
-        public ObservableCollection<GrupoConceptoDetalle> GrupoConceptoDetalle { get; }
+        public ObservableCollection<GrupoConceptoDetalle> GrupoConceptoDetalle { get; set; }
     }
 }

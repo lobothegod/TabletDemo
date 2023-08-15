@@ -8,8 +8,8 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
 
-        <datagrid:SfDataGrid AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
-            ItemsSource="{Binding EquipoConceptos}">
+        <datagrid:SfDataGrid Grid.Row="1" Padding="10" AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
+                                 ItemsSource="{Binding EquipoConceptos}">
         </datagrid:SfDataGrid>
 
     </StackLayout>
