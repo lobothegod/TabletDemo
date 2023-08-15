@@ -1,5 +1,6 @@
 using Prism;
 using Prism.Ioc;
+using Prism.Unity;
 using TabletDemo.ViewModels;
 using TabletDemo.Views;
 using Xamarin.Essentials.Implementation;
@@ -8,7 +9,7 @@ using Xamarin.Forms;
 
 namespace TabletDemo
 {
-    public partial class App
+    public partial class App : PrismApplication
     {
         public App(IPlatformInitializer initializer)
             : base(initializer)
@@ -17,6 +18,9 @@ namespace TabletDemo
 
         protected override async void OnInitialized()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjYyMjAzNUAzMjMyMmUzMDJlMzBZMklTdVRxVXpDZm45TUhGTytnRDV1SWVNZ1NkN2w5am9pSWZzM2JKZlMwPQ==");
+
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");

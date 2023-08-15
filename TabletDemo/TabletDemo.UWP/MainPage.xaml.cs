@@ -1,4 +1,5 @@
-﻿using Prism;
+using Syncfusion.SfDataGrid.XForms.UWP;
+using Prism;
 using Prism.Ioc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace TabletDemo.UWP
         public MainPage()
         {
             this.InitializeComponent();
+            SfDataGridRenderer.Init();
 
             LoadApplication(new TabletDemo.App(new UwpInitializer()));
         }
