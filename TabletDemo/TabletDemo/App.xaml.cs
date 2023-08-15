@@ -1,6 +1,7 @@
 using Prism;
 using Prism.Ioc;
 using Prism.Unity;
+using TabletDemo.Services;
 using TabletDemo.ViewModels;
 using TabletDemo.Views;
 using Xamarin.Essentials.Implementation;
@@ -29,6 +30,9 @@ namespace TabletDemo
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+
+            //servicios:
+            containerRegistry.RegisterSingleton<ITabletDemoService, TabletDemoServiceMockup>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
