@@ -98,7 +98,7 @@ namespace TabletDemo.ViewModels
                 if (gcd.CodigoTipoObjeto == CodigoTipoObjeto.COMBOBOX)
                 {
                     EquipoConceptos.Columns.Add(gcd.DescripcionEquipoConcepto, typeof(string)).DefaultValue = " ";
-                    SfGridColumns.Add(new GridComboBoxColumn() { MappingName = gcd.DescripcionEquipoConcepto, ItemsSource = _tabletDemoService.ObtenerDatosXNombreMetodo(gcd.ConsultaValorObjeto).ToObservableCollection(), ValueMemberPath = gcd.DescripcionEquipoConcepto, DisplayMemberPath = "Descripcion", AllowEditing = true, ColumnSizer = ColumnSizer.Star, DropDownWidth = 150 });
+                    SfGridColumns.Add(new GridComboBoxColumn() { MappingName = gcd.DescripcionEquipoConcepto, ItemsSource = _tabletDemoService.ObtenerDatosXNombreMetodo(gcd.ConsultaValorObjeto), ValueMemberPath = "Codigo", DisplayMemberPath = "Descripcion", AllowEditing = true, ColumnSizer = ColumnSizer.Star, DropDownWidth = 150 });
                 }
                 else if (gcd.CodigoTipoObjeto == CodigoTipoObjeto.TEXTBOX)//TEXTBOX
                 {

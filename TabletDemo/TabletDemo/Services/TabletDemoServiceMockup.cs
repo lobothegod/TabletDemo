@@ -24,7 +24,7 @@ namespace TabletDemo.Services
                 lEquipoConceptoTurno.Add(new EquipoConceptoTurno() { IDEquipoConcepto = 9, Valor = "77" });
                 lEquipoConceptoTurno.Add(new EquipoConceptoTurno() { IDEquipoConcepto = 10, Valor = "88" });
                 lEquipoConceptoTurno.Add(new EquipoConceptoTurno() { IDEquipoConcepto = 11, Valor = "99" });
-                lEquipoConceptoTurno.Add(new EquipoConceptoTurno() { IDEquipoConcepto = 12, Valor = "1" });
+                lEquipoConceptoTurno.Add(new EquipoConceptoTurno() { IDEquipoConcepto = 12, Valor = " " });
             }
             else if (IDGrupoConcepto == 222)
             {
@@ -51,17 +51,18 @@ namespace TabletDemo.Services
 
             if (nombreMetodo == "Estado")
             {
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "1", Descripcion = "Soltero" });
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "2", Descripcion = "Casado" });
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "3", Descripcion = "Viudo" });
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "4", Descripcion = "Divorciado" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = " ", Descripcion = "--ELIGE--" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "1", Descripcion = "Soltero" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "2", Descripcion = "Casado" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "3", Descripcion = "Viudo" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "4", Descripcion = "Divorciado" });
             }
             else if (nombreMetodo == "Estacion")
             {
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "1", Descripcion = "Primavera" });
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "2", Descripcion = "Verano" });
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "3", Descripcion = "Otoño" });
-                ListaItemsCombo.Add(new GridComboBoxModelo() { Estado = "4", Descripcion = "Invierno" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "1", Descripcion = "Primavera" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "2", Descripcion = "Verano" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "3", Descripcion = "Otoño" });
+                ListaItemsCombo.Add(new GridComboBoxModelo() { Codigo = "4", Descripcion = "Invierno" });
             }
 
             return ListaItemsCombo;
