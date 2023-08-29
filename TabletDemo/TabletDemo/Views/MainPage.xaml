@@ -8,7 +8,7 @@
 
     <Grid>
         <datagrid:SfDataGrid Padding="10" AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
-                                 ItemsSource="{Binding EquipoConceptos}">
+                                 ItemsSource="{Binding EquipoConceptos}" StackedHeaderRows="{Binding SfGridStackedHeaderRows}">
             <datagrid:SfDataGrid.Behaviors>
                 <xct:EventToCommandBehavior EventName="CurrentCellEndEdit" Command="{Binding CurrentCellEndEditCommand}" />
             </datagrid:SfDataGrid.Behaviors>

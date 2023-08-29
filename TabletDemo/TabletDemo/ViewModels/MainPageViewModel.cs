@@ -14,6 +14,7 @@ using TabletDemo.Resources;
 using TabletDemo.Services;
 using Xamarin.CommunityToolkit.Helpers;
 using Xamarin.CommunityToolkit.ObjectModel;
+using Xamarin.Forms;
 using static TabletDemo.Models.AccionesPredefinidas.ServicioOPUS;
 
 namespace TabletDemo.ViewModels
@@ -42,6 +43,7 @@ namespace TabletDemo.ViewModels
 
         //Variables internas
         public Columns SfGridColumns { get; set; } = new Columns();
+        public StackedHeaderRowCollection SfGridStackedHeaderRows { get; set; } = new StackedHeaderRowCollection();
 
         List<EquipoConceptoTurno> lEquipoConceptoTurno;
 
@@ -83,6 +85,28 @@ namespace TabletDemo.ViewModels
         {
             EquipoConceptos = new DataTable();
             lEquipoConceptoTurno = _tabletDemoService.ObtenerDatosTurno(IDGRUPOCONCEPTO);
+
+            var stackedHeaderRow1 = new StackedHeaderRow();
+            stackedHeaderRow1.StackedColumns.Add(new StackedColumn()
+            {
+                ChildColumns = "Equipo" + "," + "Molino",
+                Text = "Order Details",
+                MappingName = "OrderDetails",
+                FontAttribute = FontAttributes.Bold,
+                TextAlignment = TextAlignment.Center
+            });
+            stackedHeaderRow1.StackedColumns.Add(new StackedColumn()
+            {
+                ChildColumns = "TiempoOper" + "," + "Tonelaje" + "," + "Energia" + "," + "Estado",
+                Text = "Customer Details",
+                MappingName = "CustomerDetails",
+                FontAttribute = FontAttributes.Bold,
+                TextAlignment = TextAlignment.Center
+            });
+
+            SfGridStackedHeaderRows.Add(stackedHeaderRow1);
+
+
 
             //AGREGANDO COLUMNAS AL DATATABLE Y AL SFGRID
             EquipoConceptos.Columns.Add("Equipo", typeof(string));
