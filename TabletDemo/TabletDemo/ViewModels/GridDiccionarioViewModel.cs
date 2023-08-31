@@ -65,6 +65,16 @@ namespace TabletDemo.ViewModels
             }
         }
 
+        private List<GridComboBoxModelo> CargarCombo()
+        {
+            var listaCombo = new List<GridComboBoxModelo>();
+            listaCombo.Add(new GridComboBoxModelo() { Codigo = "1", Descripcion = "Soltero" });
+            listaCombo.Add(new GridComboBoxModelo() { Codigo = "2", Descripcion = "Casado" });
+            listaCombo.Add(new GridComboBoxModelo() { Codigo = "3", Descripcion = "Viudo" });
+
+            return listaCombo;
+        }
+
         private void CrearEstructuraConDatos()
         {
             SfGridColumns.Add(new GridNumericColumn() { MappingName = "ListaDic[Subject1]", HeaderText = "titulo Subject1", NumberDecimalDigits = 2, ColumnSizer = ColumnSizer.Star });
