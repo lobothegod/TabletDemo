@@ -25,6 +25,7 @@ namespace TabletDemo.ViewModels
 
         //Comandos
         public ICommand CurrentCellEndEditCommand { protected set; get; }
+        public ICommand BotonCommand { protected set; get; }
 
         //Variables de pantalla
         private GrupoConcepto _grupoConcepto;
@@ -59,8 +60,15 @@ namespace TabletDemo.ViewModels
 
             //Comandos
             CurrentCellEndEditCommand = new AsyncCommand<object>(OnCurrentCellEndEdit);
+            BotonCommand = new AsyncCommand(OnBoton);
 
             lEquipoConceptoTurno = new List<EquipoConceptoTurno>();
+        }
+
+        async Task OnBoton()
+        {
+            CrearEstructuraConDatos();
+            CrearCabecera();
         }
 
         async Task OnCurrentCellEndEdit(object obj)
@@ -86,25 +94,7 @@ namespace TabletDemo.ViewModels
             EquipoConceptos = new DataTable();
             lEquipoConceptoTurno = _tabletDemoService.ObtenerDatosTurno(IDGRUPOCONCEPTO);
 
-            var stackedHeaderRow1 = new StackedHeaderRow();
-            stackedHeaderRow1.StackedColumns.Add(new StackedColumn()
-            {
-                ChildColumns = "Equipo" + "," + "Molino",
-                Text = "Order Details",
-                MappingName = "OrderDetails",
-                FontAttribute = FontAttributes.Bold,
-                TextAlignment = TextAlignment.Center
-            });
-            stackedHeaderRow1.StackedColumns.Add(new StackedColumn()
-            {
-                ChildColumns = "TiempoOper" + "," + "Tonelaje" + "," + "Energia" + "," + "Estado",
-                Text = "Customer Details",
-                MappingName = "CustomerDetails",
-                FontAttribute = FontAttributes.Bold,
-                TextAlignment = TextAlignment.Center
-            });
-
-            SfGridStackedHeaderRows.Add(stackedHeaderRow1);
+            
 
 
 
@@ -169,7 +159,30 @@ namespace TabletDemo.ViewModels
         {
             GrupoConcepto = new GrupoConcepto();
             GrupoConcepto.GrupoConceptoDetalle = _tabletDemoService.ObtenerGrupoConceptoDetalle(IDGRUPOCONCEPTO).ToObservableCollection();
-            CrearEstructuraConDatos();
+            
+        }
+
+        private void CrearCabecera()
+        {
+            var stackedHeaderRow1 = new StackedHeaderRow();
+            stackedHeaderRow1.StackedColumns.Add(new StackedColumn()
+            {
+                ChildColumns = "Equipo" + "," + "Molino",
+                Text = "Order Details",
+                MappingName = "OrderDetails",
+                FontAttribute = FontAttributes.Bold,
+                TextAlignment = TextAlignment.Center
+            });
+            stackedHeaderRow1.StackedColumns.Add(new StackedColumn()
+            {
+                ChildColumns = "TiempoOper" + "," + "Tonelaje" + "," + "Energia" + "," + "Estado",
+                Text = "Customer Details",
+                MappingName = "CustomerDetails",
+                FontAttribute = FontAttributes.Bold,
+                TextAlignment = TextAlignment.Center
+            });
+
+            SfGridStackedHeaderRows.Add(stackedHeaderRow1);
         }
 
         ///////////////////////////////////////////////////////////////
