@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:datagrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TabletDemo.Views.GridDiccionario"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="auto,*">
+        <Button Grid.Row="0" Text="presionar" Command="{Binding BotonCommand}" />
+        <datagrid:SfDataGrid Grid.Row="1" Padding="10" AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
+                                 ItemsSource="{Binding EquipoConceptoDic}" StackedHeaderRows="{Binding SfGridStackedHeaderRows}">
+            <datagrid:SfDataGrid.Behaviors>
+                <xct:EventToCommandBehavior EventName="CurrentCellEndEdit" Command="{Binding CurrentCellEndEditCommand}" />
+            </datagrid:SfDataGrid.Behaviors>
+        </datagrid:SfDataGrid>
+    </Grid>
+
+</ContentPage>

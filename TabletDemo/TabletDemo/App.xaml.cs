@@ -24,7 +24,7 @@ namespace TabletDemo
 
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/GridDiccionario");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -36,6 +36,7 @@ namespace TabletDemo
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<GridDiccionario, GridDiccionarioViewModel>();
         }
     }
 }
