@@ -85,9 +85,9 @@ namespace TabletDemo.ViewModels
 
             var equipoConceptoDic = new EquipoConceptoDic();
 
-            var dictionary = new Dictionary<string, int?>();
+            var dictionary = new Dictionary<string, double>();
             dictionary.Add("Subject1", 122);
-            dictionary.Add("Subject2", null);
+            dictionary.Add("Subject2", 7);
 
             equipoConceptoDic.ListaDic = dictionary;
             EquipoConceptoDic.Add(equipoConceptoDic);
@@ -95,7 +95,7 @@ namespace TabletDemo.ViewModels
 
             var equipoConceptoDic2 = new EquipoConceptoDic();
 
-            var dictionary2 = new Dictionary<string, int?>();
+            var dictionary2 = new Dictionary<string, double>();
             dictionary2.Add("Subject1", 222);
             dictionary2.Add("Subject2", 233);
 

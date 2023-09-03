@@ -8,10 +8,10 @@ namespace TabletDemo.Models
     {
         public EquipoConceptoDic()
         {
-            ListaDic = new Dictionary<string, int?>();
+            ListaDic = new Dictionary<string, double>();
         }
 
         //public string Nombre { get; set; }
-        public Dictionary<string, int?> ListaDic { get; set; }
+        public Dictionary<string, double> ListaDic { get; set; }
     }
 }
