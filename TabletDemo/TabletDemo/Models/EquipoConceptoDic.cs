@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace TabletDemo.Models
 {
-    public class EquipoConceptoDic
+    public class EquipoConceptoDic : BindableBase
     {
         public EquipoConceptoDic()
         {
@@ -12,6 +13,13 @@ namespace TabletDemo.Models
         }
 
         //public string Nombre { get; set; }
-        public Dictionary<string, double> ListaDic { get; set; }
+        //public Dictionary<string, double> ListaDic { get; set; }
+
+        private Dictionary<string, double> _listaDic;
+        public Dictionary<string, double> ListaDic
+        {
+            get { return _listaDic; }
+            set { SetProperty(ref _listaDic, value); }
+        }
     }
 }

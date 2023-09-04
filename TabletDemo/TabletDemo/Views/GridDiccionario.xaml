@@ -11,7 +11,7 @@
     <Grid RowDefinitions="auto,*">
         <Button Grid.Row="0" Text="presionar" Command="{Binding BotonCommand}" />
         <datagrid:SfDataGrid Grid.Row="1" Padding="10" AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
-                                 ItemsSource="{Binding EquipoConceptoDic}" StackedHeaderRows="{Binding SfGridStackedHeaderRows}">
+                                 ItemsSource="{Binding EquipoConceptoDic, Mode=TwoWay}" StackedHeaderRows="{Binding SfGridStackedHeaderRows}">
             <datagrid:SfDataGrid.Behaviors>
                 <xct:EventToCommandBehavior EventName="CurrentCellEndEdit" Command="{Binding CurrentCellEndEditCommand}" />
             </datagrid:SfDataGrid.Behaviors>
