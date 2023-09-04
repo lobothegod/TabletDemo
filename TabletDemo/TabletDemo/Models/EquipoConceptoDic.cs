@@ -12,7 +12,19 @@ namespace TabletDemo.Models
             ListaDic = new Dictionary<string, double>();
         }
 
-        //public string Nombre { get; set; }
+        private string _nombre;
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { SetProperty(ref _nombre, value); }
+        }
+
+        private double _dni;
+        public double DNI
+        {
+            get { return _dni; }
+            set { SetProperty(ref _dni, value); }
+        }
         //public Dictionary<string, double> ListaDic { get; set; }
 
         private Dictionary<string, double> _listaDic;
