@@ -77,17 +77,19 @@ namespace TabletDemo.ViewModels
 
         private void CrearEstructuraConDatos()
         {
-            SfGridColumns.Add(new GridNumericColumn() { MappingName = "ListaDic[Subject1]", HeaderText = "titulo Subject1", NumberDecimalDigits = 2, ColumnSizer = ColumnSizer.Star });
-            SfGridColumns.Add(new GridNumericColumn() { MappingName = "ListaDic[Subject2]", HeaderText = "titulo Subject2", NumberDecimalDigits = 0, ColumnSizer = ColumnSizer.Star });
+            SfGridColumns.Add(new GridTextColumn() { MappingName = "ListaDic[Subject1]", HeaderText = "Sub1 text", ColumnSizer = ColumnSizer.Star });
+            SfGridColumns.Add(new GridNumericColumn() { MappingName = "ListaDic[Subject2]", HeaderText = "Sub2 numeric", NumberDecimalDigits = 0, ColumnSizer = ColumnSizer.Star, AllowNullValue = true });
+            SfGridColumns.Add(new GridComboBoxColumn() { MappingName = "ListaDic[Subject3]", HeaderText = "Sub3 combo", ItemsSource = CargarCombo(), ValueMemberPath = "Codigo", DisplayMemberPath = "Descripcion", AllowEditing = true, ColumnSizer = ColumnSizer.Star, DropDownWidth = 150 });
 
             EquipoConceptoDic = new ObservableCollection<EquipoConceptoDic>();
 
 
             var equipoConceptoDic = new EquipoConceptoDic();
 
-            var dictionary = new Dictionary<string, double>();
-            dictionary.Add("Subject1", 122);
-            dictionary.Add("Subject2", 7);
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Subject1", null);
+            dictionary.Add("Subject2", null);
+            dictionary.Add("Subject3", "1");
 
             equipoConceptoDic.ListaDic = dictionary;
             EquipoConceptoDic.Add(equipoConceptoDic);
@@ -95,9 +97,10 @@ namespace TabletDemo.ViewModels
 
             var equipoConceptoDic2 = new EquipoConceptoDic();
 
-            var dictionary2 = new Dictionary<string, double>();
-            dictionary2.Add("Subject1", 222);
+            var dictionary2 = new Dictionary<string, object>();
+            dictionary2.Add("Subject1", "holis");
             dictionary2.Add("Subject2", 233);
+            dictionary2.Add("Subject3", "2");
 
             equipoConceptoDic2.ListaDic = dictionary2;
             EquipoConceptoDic.Add(equipoConceptoDic2);

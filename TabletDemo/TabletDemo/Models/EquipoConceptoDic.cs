@@ -9,7 +9,7 @@ namespace TabletDemo.Models
     {
         public EquipoConceptoDic()
         {
-            ListaDic = new Dictionary<string, double>();
+            ListaDic = new Dictionary<string, object>();
         }
 
         private string _nombre;
@@ -27,8 +27,8 @@ namespace TabletDemo.Models
         }
         //public Dictionary<string, double> ListaDic { get; set; }
 
-        private Dictionary<string, double> _listaDic;
-        public Dictionary<string, double> ListaDic
+        private Dictionary<string, object> _listaDic;
+        public Dictionary<string, object> ListaDic
         {
             get { return _listaDic; }
             set { SetProperty(ref _listaDic, value); }

@@ -1,4 +1,6 @@
-﻿using TabletDemo.Resources;
+﻿using TabletDemo.Models;
+using TabletDemo.Renderers;
+using TabletDemo.Resources;
 using Xamarin.CommunityToolkit.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,6 +16,14 @@ namespace TabletDemo.Views
             LocalizationResourceManager.Current.Init(DemoResource.ResourceManager);
 
             InitializeComponent();
+            GridPrincipal.CellRenderers.Remove("TextView");
+            GridPrincipal.CellRenderers.Add("TextView", new GridCellTextViewRendererExt<EquipoConceptoDic>("ListaDic"));
+
+            GridPrincipal.CellRenderers.Remove("Numeric");
+            GridPrincipal.CellRenderers.Add("Numeric", new GridCellNumericRendererExt<EquipoConceptoDic>("ListaDic"));
+
+            GridPrincipal.CellRenderers.Remove("ComboBox");
+            GridPrincipal.CellRenderers.Add("ComboBox", new GridCellComboBoxRendererExt<EquipoConceptoDic>("ListaDic"));
         }
 
         private void Current_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
