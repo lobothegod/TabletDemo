@@ -24,6 +24,9 @@ namespace TabletDemo.Views
 
             GridPrincipal.CellRenderers.Remove("ComboBox");
             GridPrincipal.CellRenderers.Add("ComboBox", new GridCellComboBoxRendererExt<EquipoConceptoDic>("ListaDic"));
+
+            GridPrincipal.CellRenderers.Remove("Template");
+            GridPrincipal.CellRenderers.Add("Template", new GridCellTemplateRendererExt<EquipoConceptoDic>("ListaDic"));
         }
 
         private void Current_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
