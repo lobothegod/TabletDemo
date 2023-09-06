@@ -77,9 +77,9 @@ namespace TabletDemo.ViewModels
 
         private void CrearEstructuraConDatos()
         {
-            SfGridColumns.Add(new GridTextColumn() { MappingName = "ListaDic[Subject1]", HeaderText = "Sub1 text", ColumnSizer = ColumnSizer.Star });
-            SfGridColumns.Add(new GridNumericColumn() { MappingName = "ListaDic[Subject2]", HeaderText = "Sub2 numeric", NumberDecimalDigits = 0, ColumnSizer = ColumnSizer.Star, AllowNullValue = true });
-            SfGridColumns.Add(new GridComboBoxColumn() { MappingName = "ListaDic[Subject3]", HeaderText = "Sub3 combo", ItemsSource = CargarCombo(), ValueMemberPath = "Codigo", DisplayMemberPath = "Descripcion", AllowEditing = true, ColumnSizer = ColumnSizer.Star, DropDownWidth = 150 });
+            SfGridColumns.Add(new GridTextColumn() { MappingName = "ListaDic[Subject1]", HeaderText = "col1 text", ColumnSizer = ColumnSizer.Star });
+            SfGridColumns.Add(new GridNumericColumn() { MappingName = "ListaDic[Subject2]", HeaderText = "col2 numeric", NumberDecimalDigits = 0, ColumnSizer = ColumnSizer.Star, AllowNullValue = true });
+            SfGridColumns.Add(new GridComboBoxColumn() { MappingName = "ListaDic[Subject3]", HeaderText = "col3 combo", ItemsSource = CargarCombo(), ValueMemberPath = "Codigo", DisplayMemberPath = "Descripcion", AllowEditing = true, ColumnSizer = ColumnSizer.Star, DropDownWidth = 150 });
 
             EquipoConceptoDic = new ObservableCollection<EquipoConceptoDic>();
 
@@ -89,7 +89,7 @@ namespace TabletDemo.ViewModels
             var dictionary = new Dictionary<string, object>();
             dictionary.Add("Subject1", null);
             dictionary.Add("Subject2", null);
-            dictionary.Add("Subject3", "1");
+            dictionary.Add("Subject3", null);
 
             equipoConceptoDic.ListaDic = dictionary;
             EquipoConceptoDic.Add(equipoConceptoDic);
@@ -98,7 +98,7 @@ namespace TabletDemo.ViewModels
             var equipoConceptoDic2 = new EquipoConceptoDic();
 
             var dictionary2 = new Dictionary<string, object>();
-            dictionary2.Add("Subject1", "holis");
+            dictionary2.Add("Subject1", "Some text");
             dictionary2.Add("Subject2", 233);
             dictionary2.Add("Subject3", "2");
 
