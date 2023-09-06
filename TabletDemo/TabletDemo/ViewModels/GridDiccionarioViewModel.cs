@@ -35,6 +35,7 @@ namespace TabletDemo.ViewModels
         }
 
         //Variables internas
+        public SfDataGrid GridPrincipal { get; set; }
         public Columns SfGridColumns { get; set; } = new Columns();
         public StackedHeaderRowCollection SfGridStackedHeaderRows { get; set; } = new StackedHeaderRowCollection();
 
@@ -47,11 +48,11 @@ namespace TabletDemo.ViewModels
             //Comandos
             CurrentCellEndEditCommand = new AsyncCommand<object>(OnCurrentCellEndEdit);
             BotonCommand = new AsyncCommand(OnBoton);
-
         }
 
         async Task OnBoton()
         {
+            GridPrincipal.ScrollingMode = ScrollingMode.Line; //temporal para poder editar celdas cuando hay pocas filas (si no hay scroll, no se puede editar)
             //CrearCabecera();
             CrearEstructuraConDatos();
         }

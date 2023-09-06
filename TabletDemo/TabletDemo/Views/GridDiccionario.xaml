@@ -10,7 +10,7 @@
 
     <StackLayout>
         <Button Text="PRESS TO GENERATE" Command="{Binding BotonCommand}" />
-        <datagrid:SfDataGrid x:Name="GridPrincipal" Padding="10" AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
+        <datagrid:SfDataGrid x:Name="gridPrincipal" Padding="10" AllowEditing="True" SelectionMode="Single"  NavigationMode="Cell"  AutoGenerateColumns="False" Columns="{Binding SfGridColumns}"
                                  ItemsSource="{Binding EquipoConceptoDic, Mode=TwoWay}" StackedHeaderRows="{Binding SfGridStackedHeaderRows}" EditorSelectionBehavior="SelectAll">
             <datagrid:SfDataGrid.Behaviors>
                 <xct:EventToCommandBehavior EventName="CurrentCellEndEdit" Command="{Binding CurrentCellEndEditCommand}" />
