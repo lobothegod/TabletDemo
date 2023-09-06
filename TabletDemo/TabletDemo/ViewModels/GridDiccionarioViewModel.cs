@@ -68,12 +68,32 @@ namespace TabletDemo.ViewModels
         private List<GridComboBoxModelo> CargarCombo()
         {
             var listaCombo = new List<GridComboBoxModelo>();
-            listaCombo.Add(new GridComboBoxModelo() { Codigo = " ", Descripcion = "--Elige--" });
+            listaCombo.Add(new GridComboBoxModelo() { Codigo = "0", Descripcion = "--Elige--" });
             listaCombo.Add(new GridComboBoxModelo() { Codigo = "1", Descripcion = "Soltero" });
             listaCombo.Add(new GridComboBoxModelo() { Codigo = "2", Descripcion = "Casado" });
             listaCombo.Add(new GridComboBoxModelo() { Codigo = "3", Descripcion = "Viudo" });
 
             return listaCombo;
+        }
+
+        private void GenerarDataAleatoria()
+        {
+            var nroFilas = 2;// a partir de 8 filas se puede hacer clic en la celda a editar
+            for (int i = 0; i < nroFilas; i++)
+            {
+                var col1Random = new Random();
+                var col2Random = new Random();
+                var col3Random = new Random();
+                
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Subject1", "Some text" + col1Random.Next(10, 1000));
+                dictionary.Add("Subject2", col2Random.Next(10, 1000));
+                dictionary.Add("Subject3", col3Random.Next(0, 4).ToString());
+
+                var equipoConceptoDic = new EquipoConceptoDic();
+                equipoConceptoDic.ListaDic = dictionary;
+                EquipoConceptoDic.Add(equipoConceptoDic);
+            }
         }
 
         private void CrearEstructuraConDatos()
@@ -83,28 +103,7 @@ namespace TabletDemo.ViewModels
             SfGridColumns.Add(new GridComboBoxColumn() { MappingName = "ListaDic[Subject3]", HeaderText = "col3 combo", ItemsSource = CargarCombo(), ValueMemberPath = "Codigo", DisplayMemberPath = "Descripcion", AllowEditing = true, ColumnSizer = ColumnSizer.Star, DropDownWidth = 150 });
 
             EquipoConceptoDic = new ObservableCollection<EquipoConceptoDic>();
-
-
-            var equipoConceptoDic = new EquipoConceptoDic();
-
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Subject1", null);
-            dictionary.Add("Subject2", null);
-            dictionary.Add("Subject3", " ");
-
-            equipoConceptoDic.ListaDic = dictionary;
-            EquipoConceptoDic.Add(equipoConceptoDic);
-
-
-            var equipoConceptoDic2 = new EquipoConceptoDic();
-
-            var dictionary2 = new Dictionary<string, object>();
-            dictionary2.Add("Subject1", "Some text");
-            dictionary2.Add("Subject2", 233);
-            dictionary2.Add("Subject3", "2");
-
-            equipoConceptoDic2.ListaDic = dictionary2;
-            EquipoConceptoDic.Add(equipoConceptoDic2);
+            GenerarDataAleatoria();
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
