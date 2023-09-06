@@ -68,6 +68,7 @@ namespace TabletDemo.ViewModels
         private List<GridComboBoxModelo> CargarCombo()
         {
             var listaCombo = new List<GridComboBoxModelo>();
+            listaCombo.Add(new GridComboBoxModelo() { Codigo = " ", Descripcion = "--Elige--" });
             listaCombo.Add(new GridComboBoxModelo() { Codigo = "1", Descripcion = "Soltero" });
             listaCombo.Add(new GridComboBoxModelo() { Codigo = "2", Descripcion = "Casado" });
             listaCombo.Add(new GridComboBoxModelo() { Codigo = "3", Descripcion = "Viudo" });
@@ -89,7 +90,7 @@ namespace TabletDemo.ViewModels
             var dictionary = new Dictionary<string, object>();
             dictionary.Add("Subject1", null);
             dictionary.Add("Subject2", null);
-            dictionary.Add("Subject3", null);
+            dictionary.Add("Subject3", " ");
 
             equipoConceptoDic.ListaDic = dictionary;
             EquipoConceptoDic.Add(equipoConceptoDic);
