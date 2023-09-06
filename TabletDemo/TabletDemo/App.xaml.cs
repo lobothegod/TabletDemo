@@ -20,7 +20,7 @@ namespace TabletDemo
         protected override async void OnInitialized()
         {
             //Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjYyMjAzNUAzMjMyMmUzMDJlMzBZMklTdVRxVXpDZm45TUhGTytnRDV1SWVNZ1NkN2w5am9pSWZzM2JKZlMwPQ==");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjY4MjY0MEAzMjMyMmUzMDJlMzBUVS9JRkVvZ2UyQlZKT0h1VUVIUjlhR3hrOFdOVGQzd0dQNWZleWoxSUhJPQ==");
 
             InitializeComponent();
 

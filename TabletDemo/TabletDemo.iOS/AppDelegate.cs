@@ -1,3 +1,5 @@
+using Syncfusion.XForms.iOS.ComboBox;
+using Syncfusion.SfNumericTextBox.XForms.iOS;
 using Syncfusion.SfDataGrid.XForms.iOS;
 using Foundation;
 using Prism;
@@ -23,6 +25,8 @@ namespace TabletDemo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
 global::Xamarin.Forms.Forms.Init();
+SfComboBoxRenderer.Init();
+SfNumericTextBoxRenderer.Init();
 SfDataGridRenderer.Init();
             LoadApplication(new App(new iOSInitializer()));
 

@@ -1,3 +1,5 @@
+using Syncfusion.XForms.UWP.ComboBox;
+using Syncfusion.SfNumericTextBox.XForms.UWP;
 using Syncfusion.SfDataGrid.XForms.UWP;
 using System.Reflection;
 using System;
@@ -55,6 +57,8 @@ namespace TabletDemo.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
 List<Assembly> assembliesToInclude = new List<Assembly>();
+assembliesToInclude.Add(typeof(SfComboBoxRenderer).GetTypeInfo().Assembly);
+assembliesToInclude.Add(typeof(SfNumericTextBoxRenderer).GetTypeInfo().Assembly);
 assembliesToInclude.Add(typeof(SfDataGridRenderer).GetTypeInfo().Assembly);
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
